@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
-    "lib/paraphraser.rb",
+    "lib/convertor.rb",
     "paraphraser.gemspec",
     "test/helper.rb",
     "test/test_paraphraser.rb"
