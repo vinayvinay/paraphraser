@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{paraphraser}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Vinay Patel"]
@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "lib/convertor.rb",
+    "lib/tasks/paraphraser.rake",
     "paraphraser.gemspec",
     "test/helper.rb",
     "test/test_paraphraser.rb"
