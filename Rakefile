@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "paraphraser"
   gem.homepage = "http://github.com/vinayvinay/paraphraser"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = "provides a rake task to convert migrations to sql statements for *the dba*."
+  gem.description = "provides a rake task to convert migrations to sql statements for *the dba*."
   gem.email = "mail@vinayvinay.com"
   gem.authors = ["Vinay Patel"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
