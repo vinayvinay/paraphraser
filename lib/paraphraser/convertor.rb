@@ -32,9 +32,8 @@ module Paraphraser
       end
 
       def apply_stubs
+        connection.class.send(:alias_method, :real_execute, :execute)
         connection.instance_eval do
-          alias_method :real_execute, :execute
-
           def execute(*args)
             p '--', args.first
           end
@@ -42,9 +41,7 @@ module Paraphraser
       end
 
       def reset_stubs
-        connection.instance_eval do
-          alias_method :execute, :real_execute
-        end
+        connection.class.send(:alias_method, :execute, :real_execute)
       end
       
     end
