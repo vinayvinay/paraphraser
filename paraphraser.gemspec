@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{paraphraser}
-  s.version = ""
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Vinay Patel"]
   s.date = %q{2010-12-29}
-  s.description = %q{TODO: longer description of your gem}
+  s.description = %q{provides a rake task to convert migrations to sql statements for *the dba*.}
   s.email = %q{mail@vinayvinay.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -23,7 +23,9 @@ Gem::Specification.new do |s|
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
+    "VERSION",
     "lib/paraphraser.rb",
+    "paraphraser.gemspec",
     "test/helper.rb",
     "test/test_paraphraser.rb"
   ]
@@ -31,7 +33,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{TODO: one-line summary of your gem}
+  s.summary = %q{provides a rake task to convert migrations to sql statements for *the dba*.}
   s.test_files = [
     "test/helper.rb",
     "test/test_paraphraser.rb"
