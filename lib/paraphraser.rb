@@ -1,1 +1,1 @@
-require 'convertor'
+require 'paraphraser/convertor'
