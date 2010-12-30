@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{paraphraser}
-  s.version = "0.1.10"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Vinay Patel"]
-  s.date = %q{2010-12-29}
+  s.date = %q{2010-12-30}
   s.description = %q{provides a rake task to convert migrations to sql statements for *the dba*.}
   s.email = %q{mail@vinayvinay.com}
   s.extra_rdoc_files = [
