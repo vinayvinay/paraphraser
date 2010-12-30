@@ -14,6 +14,7 @@ module Paraphraser
           migrations.each do |migration|
             announce "#{migration.version} : #{migration.name}"
             migration.migrate(direction)
+            update_schema_migrations_table(migration.version)
           end
         end
       end
@@ -51,6 +52,10 @@ module Paraphraser
         connection.class.send(:define_method, :change_column_default) do |table_name, column_name, default|
           execute "ALTER TABLE #{quote_table_name(table_name)} ALTER COLUMN #{quote_column_name(column_name)} SET DEFAULT #{quote(default)}"
         end
+      end
+
+      def update_schema_migrations_table(version)
+        connection.execute "INSERT INTO `schema_migrations` (version) VALUES ('#{version}')"
       end
 
       def announce(text)
