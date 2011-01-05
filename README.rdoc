@@ -1,6 +1,28 @@
 = paraphraser
 
-Description goes here.
+Paraphraser, is a very simple gem.                                                                                                                                                                                                         
+It adds a rake task that will drop, re-create and migrate a database (default is test) and will output the sql generated in the migration process.
+It will output the sql to screen as well as to a file ./migration.sql.
+
+= usage
+
+to install:
+
+  gem install paraphraser
+
+then, from your rails project root:
+
+  rake db:paraphrase:all  
+
+to use your development database instead of the default test database
+   
+   rake 'db:paraphrase:all[development]'
+
+= disclaimer
+
+Paraphraser, works like the computer - GIGO. It doesn't verify the semantics of your migrations.
+All it does is, simply redirect the sql sent to connection.execute to the screen and to a file.
+In the process it re-creates your database (test database by default) and hence wipes-out all data.
 
 == Contributing to paraphraser
  
