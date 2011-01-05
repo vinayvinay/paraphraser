@@ -18,8 +18,8 @@ Jeweler::Tasks.new do |gem|
   gem.summary = "provides a rake task to convert migrations to sql statements for *the dba*."
   gem.description = <<EOS
 Paraphraser, is a very simple gem.
-It will drop, re-create and migrate a database and will output the sql generated during migration in the process.
-It will output the sql to screen as well as to a file ./migration.sql
+It adds a rake task that will drop, re-create and migrate a database (default is test) and will output the sql generated in the migration process.
+It will output the sql to screen as well as to a file ./migration.sql.
 EOS
   gem.email = "mail@vinayvinay.com"
   gem.authors = ["Vinay Patel"]
