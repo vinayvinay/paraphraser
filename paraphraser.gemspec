@@ -5,12 +5,15 @@
 
 Gem::Specification.new do |s|
   s.name = %q{paraphraser}
-  s.version = "1.0.0"
+  s.version = "1.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Vinay Patel"]
   s.date = %q{2011-01-05}
-  s.description = %q{provides a rake task to convert migrations to sql statements for *the dba*.}
+  s.description = %q{Paraphraser, is a very simple gem.
+It will drop, re-create and migrate a database and will output the sql generated during migration in the process.
+It will output the sql to screen as well as to a file ./migration.sql
+}
   s.email = %q{mail@vinayvinay.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
