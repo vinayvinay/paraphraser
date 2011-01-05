@@ -16,7 +16,11 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/vinayvinay/paraphraser"
   gem.license = "MIT"
   gem.summary = "provides a rake task to convert migrations to sql statements for *the dba*."
-  gem.description = "provides a rake task to convert migrations to sql statements for *the dba*."
+  gem.description = <<EOS
+Paraphraser, is a very simple gem.
+It will drop, re-create and migrate a database and will output the sql generated during migration in the process.
+It will output the sql to screen as well as to a file ./migration.sql
+EOS
   gem.email = "mail@vinayvinay.com"
   gem.authors = ["Vinay Patel"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
