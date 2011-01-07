@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{paraphraser}
-  s.version = "1.0.3"
+  s.version = "1.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Vinay Patel"]
-  s.date = %q{2011-01-05}
+  s.date = %q{2011-01-07}
   s.description = %q{Paraphraser, is a very simple gem.
 It adds a rake task that will drop, re-create and migrate a database (default is test) and will output the sql generated in the migration process.
 It will output the sql to screen as well as to a file ./migration.sql.
@@ -29,7 +29,6 @@ It will output the sql to screen as well as to a file ./migration.sql.
     "VERSION",
     "lib/paraphraser.rb",
     "lib/paraphraser/convertor.rb",
-    "lib/paraphraser/kernel_ext.rb",
     "lib/paraphraser/railtie.rb",
     "lib/paraphraser/railties/paraphraser.rake",
     "paraphraser.gemspec",
