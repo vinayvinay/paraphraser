@@ -1,5 +1,3 @@
-require File.expand_path(File.join(File.dirname(__FILE__), 'kernel_ext'))
-
 module Paraphraser
   class Convertor
 
@@ -12,12 +10,14 @@ module Paraphraser
     class << self
 
       def convert
+        apply_obj_overrides
+        
         exit(0) unless agree_to_proceed?
 
         Rake::Task['db:drop'].invoke
         Rake::Task['db:create'].invoke
         
-        with_activerecord_stubbed do
+        with_ar_stubbed do
           announce "CreateSchemaMigrations"
           migrations.each do |migration|
             announce "#{migration.version} : #{migration.name}"
@@ -56,18 +56,27 @@ module Paraphraser
         @@migrations ||= ActiveRecord::Migrator.new(direction, migrations_path).migrations
       end
 
-      def with_activerecord_stubbed(&block)
+      def with_ar_stubbed(&block)
         ActiveRecord::Migration.verbose = false
-        apply_overrides
+        apply_ar_overrides
         yield
       end
 
-      def apply_overrides
+      def apply_ar_overrides
         connection.class.send(:define_method, :execute_with_paraphrasing) do |sql, name = nil|
           print "#{sql};\n" and STDOUT.flush unless sql =~ /^SHOW/
           execute_without_paraphrasing sql, name
         end
         connection.class.send(:alias_method_chain, :execute, :paraphrasing)
+      end
+
+      def apply_obj_overrides        
+        Object.send(:define_method, :migration_file) { @@file ||= File.open('migration.sql', 'w') }
+        Object.send(:define_method, :print_with_file_output) do |string|
+          migration_file.write string
+          print_without_file_output(string)
+        end
+        Object.send(:alias_method_chain, :print, :file_output)
       end
 
       def update_schema_migrations_table(version)
